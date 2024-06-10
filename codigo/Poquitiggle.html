@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poquitiggle</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="logo"><p>WACHIPATO SEARCHING</p></div>
+    <form action="javascript:buscar()">
+    <input id="ingresador" autocomplete="off">
+    </form>
+    <div id="pop">
+        <h1>Resultado</h1>
+        <p id="resultado" style="margin-top: 1em;">La palabra dummy aparece XXX veces en el texto ingresado. Se puede observar en las siguientes líneas:</p>
+        <textarea id="pags"></textarea>
+        <p style="color:rgb(0, 61, 0);margin-top: 0.1em;">Tiempo de búsqueda:</p>
+        <p style="color:rgb(0, 0, 0);" id="time">xxxxxxxxxxxxxx</p>
+        <p style="color:rgb(0, 61, 0);">Segundos.</p>
+        <div class="boton" onclick="Cerrar()" style="background-color: rgba(0, 0, 0, 0.767);color: rgb(253, 85, 85);margin-top: 0.5em;">X</div>
+    </div>
+    <div class="boton" id="search" onclick="buscar()">Buscar</div>
+    <div class="contenedor">
+        <p style="color: white;font-size: 20px;margin-bottom: 0.5em;">Base de datos</p>
+        <input id="adocumento" type="file" onchange="parsear(event)">
+    </div>
+    <div class="boton" style="margin-top: 2em;margin-bottom: -2em;" onclick="location.href='Menu.html';">Regresar</div>
+    <p style="position:relative; top: 19%;color:rgb(139, 139, 139);">Patrocinado por Elon Musk.</p>
+    <script src="logic.js"></script>
+</body>
+</html>

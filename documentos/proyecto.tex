@@ -1,0 +1,285 @@
+\documentclass[12pt, twoside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage[activeacute,spanish]{babel}
+\usepackage{ae}
+\usepackage[latin9]{inputenc}
+
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+%despues de \begin{document}
+%\renewcommand{\figurename}{Figura~}
+%\renewcommand{\tablename}{Tabla~}
+
+%SetFonts
+
+%SetFonts
+
+\usepackage{dirtree}
+
+\newcommand{\fechaEntrega} {13 de Junio (de 2024)}
+
+\title{Proyecto Estructuras de Datos y Algoritmos}
+\author{Rodrigo Paredes --- Ayudante: Jorge Huenchún}
+\date{3 Junio de 2024. Plazo: \fechaEntrega.}	%\today  Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+%\subsection{}
+
+En este proyecto usted va a verificar experimentalmente que la búsqueda
+indexada es más eficiente que la fuerza bruta.
+
+Este proyecto se puede realizar en grupos de hasta cuatro alumnos (mínimo dos alumnos).
+
+%Tienen hasta el viernes 03 de mayo a las 10am para entregar el laboratorio en
+%el sitio de la asignatura en \verb|efinis.uft.cl|.
+
+%Escriban un pequeño reporte ---con introducción, desarrollo y conclusiones---
+%documentando este trabajo.
+
+\section{Proyecto}
+
+Una de las labores más importantes que se realizan en el computador es
+buscar en bases de datos de cualquier naturaleza. Para agilizar este proceso
+se sigue una metodología bastante clara. Primero se debe indexar el conjunto
+de trabajo para luego resolver las consultas sobre el índice.
+
+En este caso Ustedes van a trabajar en búsqueda indexada en texto, que es
+un problema bastante parecido al que resuelve \verb|www.google.com| pero a
+una escala diminuta.
+
+El problema consiste en que dado un archivo de texto plano, en adelante
+\emph{texto}, usted busque un determinado string, que se denomina \emph{patrón},
+en el texto, reportando la línea en que aparece el patrón.
+Si un patrón aparece varias veces, entonces debe reportar la lista de todas
+las ocurrencias.
+
+Para resolver este problema Ustedes deben seguir la siguiente metodología:
+\begin{itemize}
+  \item Implemenar la solución del problema utilizando fuerza bruta. Vale
+    decir, haciendo un recorrido secuencial línea a línea buscando el patrón
+    durante el texto.
+  \item Verificar manualmente que los resultados de su versión de fuerza
+    bruta son correctos.
+  \item Implementar un cliente interactivo que permita cargar el archivo
+    de pruebas y hacer búsquedas por fuerza bruta.
+  \item Implementar la solución del problema utilizando un índice basado
+    en tablas de hash. Si usted se limita a utilizar los diccionarios
+    preimplementados del lenguaje tiene 1.5 de descuento.
+    Para acceder al puntaje completo, usted debe codificar el índice tabla de hash.
+  \item Una vez que tenga el texto indexado, extender el cliente
+    para permitir realizar consultas de patrones sueltos sobre el índice.
+  \item Verificar que los resultados de su versión indexada son correctos
+    contrastándolos con los resultados de la versión de fuerza bruta.
+  \item Extender el cliente para permitir la realización de varias consultas
+    recibidas en un archivo de consultas, con un patrón distinto por cada línea.
+  \item BONO: Si implementa las tres alternativas (fuerza bruta, usar los
+    diccionarios del lenguaje, implementar el diccionario) y realiza la
+    comparación experimental de las tres alternativas tendrá 1.5 para la
+    solemne 1 ó 2.
+\end{itemize}
+    
+\section{Pruebas}
+
+Una vez que tenga implementado el proyecto y verificado que trabaja de
+la forma esperada, realice las siguientes pruebas:
+
+\begin{enumerate}
+  \item Utilizando el texto de este proyecto, mida el tiempo de la ejecución
+    promedio de la búsqueda con fuerza bruta y la o las alternativas implementadas.
+  \item Repita el experimento anterior, esta vez utilizando un otro texto que
+    ustedes mismos van a buscar/generar.
+\end{enumerate}
+
+Considere que los tiempos de ejecución pueden ser extremadamente breves,
+por lo tanto, considere realizar muchas repeticiones de la búsqueda, hasta poder
+medir una ejecución de unos tres minutos de la fase de búsqueda.
+En su informe indique cuántas repeticiones son necesarias para alcanzar
+los tres minutos de ejecución y compare la eficiencia de los métodos
+implementados.
+
+\section{Restricciones}
+
+\begin{itemize}
+\item El programa debe ser escrito en C/C++/Java/Python.
+\item Plazo de entrega: \fechaEntrega.
+%\item Queda prohibido utilizar bibliotecas o clases preconstruidas en el lenguaje
+%    que implementen.
+%\item Utilice alguno de los métodos para graficar que aprendió en los cursos
+%de programación previos.
+\item La tarea es en grupos de mínimo dos y máximo cuatro integrantes. %individual.
+\item Para la tarea tienen que entregar un informe de resultados junto al c'odigo
+    fuente (el programa que implementa la tarea). No se aceptan códigos sin
+    informe ni informes sin código. También entreguen el texto de prueba que
+    utilizaron para medir la ejecución de su tarea.
+\item Si la tarea no compila o no se interpreta tiene nota 1.0 tanto en el
+    código como en el informe.
+\item Se debe respetar el formato de entrega indicado en el apartado
+correspondiente como también el de impresión indicado para el programa.
+\item El tiempo máximo de ejecución es 10 minutos. Ejecuciones de mayor tiempo
+se consideran inválidas.
+\item Cualquier falta a las restricciones anteriores invalida irrevocablemente
+la tarea.
+\end{itemize}
+
+
+
+\section{Indicaciones}
+
+%Se recomienda Java.
+
+Si el informe de la tarea se escribe en \LaTeX, tiene un punto extra
+en el informe.
+
+
+\section{Ponderaci'on}
+
+El informe equivale a un 35\% de la nota de tarea.
+    
+El c'odigo equivale a un 65\% de la nota de tarea.
+
+
+\section{Entrega de la tarea}
+
+La entrega de la tarea debe incluir (1) el código del programa que resuelve
+la tarea y (2) un informe escrito donde se describa y documente el programa
+entregado, y se incluyan ejemplos de entradas y salidas. La entrega de la tarea
+se realizará a través de la plataforma {\tt lms.educandus.cl} hasta las 23:55 del día
+del plazo final. Generen un único archivo que contenga tanto el informe como
+los códigos para compilar. También se solicita que se adjunte un archivo
+README que explique cómo compilar la tarea y un archivo EXECUTE el
+cual contiene los comandos a usar para compilación y ejecución de la misma,
+este debe tener permisos de ejecución a modo de poder ser utilizado.
+Suban un único archivo que empaquete los archivos de entrega de la tarea
+a la plataforma {\tt efinis}, para eso puede comprimir el directorio con zip.
+Adicionalmente, \emph{debe de entregarse una copia impresa del informe}
+a más tardar el día siguiente del plazo final.
+La estructura del archivo a entregar debe tener el formato
+ejemplificado en la Figura \ref{fig_estructura}.
+
+\begin{figure}
+\dirtree{%
+.1 /.
+.2 NombreApellido\textunderscore T1.zip.
+.3 NombreApellido\textunderscore T1.
+.4 fuente.
+.5 EXECUTE.
+.5 README.
+.5 src.
+.6 archivo1.cpp/.c/.java/.py.
+.6 archivo2.cpp/.c/.java/.py.
+.6 foo.bar.
+.4 informe.
+.5 NombreApellido\textunderscore T1.pdf.
+.4 textoPrueba.txt.
+}
+\caption{Estructura de archivo de entrega.}
+\label{fig_estructura}
+\end{figure}
+
+     
+El contenido del informe debe seguir la siguiente pauta com'un para todas las tareas: 
+
+\begin{itemize}
+\item
+Portada. El formato de la portada se muestra en la Figura \ref{fig1}.
+%Portada. El formato de la portada se muestra a continuaci'on:
+
+\begin{figure}[tbp]
+\includegraphics[width=65mm]{informatica-negro}
+%\epsffile{utalca.eps} %{\epsfxsize16mm \epsffile{utalca.eps}} %
+%\rlap{\kern 4mm \lower -9.5mm \hbox to0pt{{\Large \sc Universidad~~de~~Talca}\hfill}}%
+%\rlap{\kern 4mm \lower -5mm \hbox to0pt{\Large \sc Facultad~~de~~Ingenier\'ia\hfill}}%
+%\rlap{\kern 4mm \lower -1mm \hbox to0pt{%
+%  {\large \sc Departamento~~de~~Ciencias~~de~~la~~Computaci\'on}\hfill}}%
+
+\vspace{1cm}
+
+\centerline{\huge \bf Informe Tarea X}
+\vspace{0.8cm}
+\centerline{\Large \bf Nombre de la Tarea X}
+
+\vspace{2cm}
+
+\hfill \begin{tabular}{ll}
+Fecha:  & $<$fecha entrega$>$\\
+Autores:  & $<$nombre los alumnos$>$\\
+e-mail: & $<$correo del alumno$>$
+\end{tabular}
+\caption{Formato para la portada.}
+\label{fig1}
+\end{figure}
+
+\item Introducci'on: Breve descripci'on del problema y de su soluci'on.
+
+\item An'alisis del problema: Se expone en detalle el problema, los supuestos
+que se van a ocupar, las situaciones de borde y la metodolog'ia
+para abordar el problema.
+
+\item Soluci'on del problema:
+  \begin{itemize}
+  \item Algoritmo de soluci'on: Se detallan los pasos a seguir para solucionar
+  el problema. De ser necesario, se recomienda incluir figuras, tablas, etc.,
+  que permitan mejorar la comprensi'on de la soluci'on propuesta.
+  
+  \item Diagrama de Estados: Muestra en forma global el programa.
+  
+  %\item Dise\~no: Explicitar las Pre y Post condiciones consideradas,
+  %mostrar los invariantes empleados.
+
+  \item Implementaci'on: Se debe mostrar el pseudo-c'odigo del programa que
+  soluciona el problema, explicando lo que hace. Omita cualquier detalle de
+  implementaci'on que sea irrelevante para entender la soluci'on del problema.
+  Se recomienda usar nombres representativos para las variables.
+  NOTA: El c'odigo generado para resolver la tarea debe corresponder al
+  dise\~no descrito, preoc'upese de comentar el c'odigo donde sea necesario
+  para facilitar su lectura.
+  
+  \item Modo de uso: Se debe explicar el modo de uso del programa y el modo
+  de compilaci'on. Nota la tarea debe ser compilable en los computadores de la Universidad.
+  \end{itemize}
+
+\item Pruebas: Se debe mostrar las pruebas realizadas y sus resultados.
+%Se debe se\~nalar claramente cual es la llamada al programa y su salida.
+El n'umero de pruebas puede variar dependiendo del problema
+En esta secci'on debe incluir las tablas y gr'aficos necesarios solicitados,
+y el an'alisis de los resultados. En este cap'itulo adjunten las conclusiones
+obtenidas de los resultados de la tarea.
+%En general tres pruebas es suficiente.
+
+\item Anexos: De ser necesario, cualquier informaci'on adicional se debe
+agregar en los anexos y debe ser referenciada en alguna secci'on del
+informe de la tarea. Dentro de los anexos se puede incluir un listado con
+el programa completo que efectivamente fue compilado.
+
+\end{itemize}
+
+En este y los siguientes informes se va a valorar la ortograf'ia y la
+redacci'on de acuerdo a las siguientes reglas de penalizaci'on.
+
+\begin{description}
+\item[Ortograf'ia]
+Se permiten hasta 10 errores ortogr'aficos en todo el informe.
+Entre 11 y 20 errores descuentan 0.5 puntos al informe.
+Entre 21 y 30 descuentan 1.0 puntos al informe.
+M'as de 30 descuentan 2.0 puntos al informe.
+\item[Redacci'on]
+Se permiten hasta 5 ideas o p'arrafos mal redactados (es decir que no se entiendan).
+Entre 6 y 10 p'arrafos con problemas de redacci'on descuentan 0.5 puntos al informe.
+Entre 11 y 14 p'arrafos descuentan 1.0 puntos al informe.
+M'as de 24 parrafos incomprensibles descuentan 2.0 puntos al informe.
+\end{description}
+
+\end{document}  
